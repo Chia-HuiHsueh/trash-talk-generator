@@ -1,0 +1,54 @@
+<div class="title d-flex justify-content-center my-5">
+  <h1>你想對誰說幹話？</h1>
+</div>
+
+<form method="POST" action="/">
+  <fieldset class="form-group">
+    <div class="container d-flex justify-content-center mb-5">
+      <div class="card-deck">
+        <div class="developer">
+          <div class="card mb-3" style="width: 18rem;">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+              class="card-img-top" alt="developer">
+          </div>
+          <div class="form-check form-check-inline d-flex justify-content-center">
+            <input class="form-check-input" type="radio" name="gridRadios" id="developer" value="工程師" required>
+            <label class="form-check-label" for="inlineRadio1">工程師</label>
+          </div>
+        </div>
+
+        <div class="designer">
+          <div class="card mb-3 " style="width: 18rem; ">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+              class="card-img-top h-200" alt="designer">
+          </div>
+          <div class="form-check form-check-inline d-flex justify-content-center">
+            <input class="form-check-input" type="radio" name="gridRadios" id="designer" value="設計師" required{{#if
+              options.gridRadios}} checked{{/if}}>
+            <label class="form-check-label" for="inlineRadio2">設計師</label>
+          </div>
+        </div>
+
+        <div class="founder">
+          <div class="card mb-3" style="width: 18rem;">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+              class="card-img-top" alt="founder">
+          </div>
+          <div class="form-check form-check-inline d-flex justify-content-center">
+            <input class="form-check-input" type="radio" name="gridRadios" id="founder" value="創業家" required>
+            <label class="form-check-label" for="inlineRadio2">創業家</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-group form-inline d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary mr-3 mb-3">產生幹話</button>
+    <textarea class="form-control" style="width: 51rem;" id="generate" rows="3" type="text" value="talk"
+      readonly>{{#if talk}}{{talk}}{{/if}}</textarea>
+
+
+  </div>
+
+</form>
