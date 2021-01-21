@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   const talk = generateTrashTalk(req.body)
-  res.render('index', { talk, options })
+  res.render('index', { talk })
 })
 
 // starts the express server and listening for connections.
