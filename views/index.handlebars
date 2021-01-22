@@ -5,39 +5,19 @@
 <form method="POST" action="/">
   <fieldset class="form-group">
     <div class="container d-flex justify-content-center mb-5">
-      <div class="card-deck">
-        <div class="developer">
+      <div class="card-deck">　　　
+        {{#each occupations }}
+        <div class="{{this.englishTitle}}">
           <div class="card mb-3" style="width: 18rem;">
-            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
-              class="card-img-top" alt="developer">
+            <img src="{{this.image}}" class="card-img-top" alt="{{this.englishTitle}}">
           </div>
           <div class="form-check form-check-inline d-flex justify-content-center">
-            <input class="form-check-input" type="radio" name="gridRadios" id="developer" value="工程師" required>
-            <label class="form-check-label" for="inlineRadio1">工程師</label>
+            <input class="form-check-input" type="radio" name="job" id="{{this.englishTitle}}"
+              value="{{ this.chineseTitle }}" required>
+            <label class="form-check-label" for="inlineRadio{{this.id}}">{{this.chineseTitle}}</label>
           </div>
         </div>
-
-        <div class="designer">
-          <div class="card mb-3 " style="width: 18rem; ">
-            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
-              class="card-img-top h-200" alt="designer">
-          </div>
-          <div class="form-check form-check-inline d-flex justify-content-center">
-            <input class="form-check-input" type="radio" name="gridRadios" id="designer" value="設計師" required>
-            <label class="form-check-label" for="inlineRadio2">設計師</label>
-          </div>
-        </div>
-
-        <div class="founder">
-          <div class="card mb-3" style="width: 18rem;">
-            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
-              class="card-img-top" alt="founder">
-          </div>
-          <div class="form-check form-check-inline d-flex justify-content-center">
-            <input class="form-check-input" type="radio" name="gridRadios" id="founder" value="創業家" required>
-            <label class="form-check-label" for="inlineRadio2">創業家</label>
-          </div>
-        </div>
+        {{/each}}
       </div>
     </div>
   </fieldset>
@@ -45,9 +25,7 @@
   <div class="form-group form-inline d-flex justify-content-center">
     <button type="submit" class="btn btn-primary mr-3 mb-3">產生幹話</button>
     <textarea class="form-control" style="width: 51rem;" id="generate" rows="3" type="text" value="talk"
-      readonly>{{#if talk}}{{talk}}{{/if}}</textarea>
-
-
+      readonly>{{#if trashTalk}}{{trashTalk}}{{/if}}</textarea>
   </div>
 
 </form>
